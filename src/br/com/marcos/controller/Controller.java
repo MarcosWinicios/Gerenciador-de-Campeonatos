@@ -94,14 +94,14 @@ public class Controller {
 	}
 	
 	public ArrayList<Participante> gerarRanking() {
-		Participante participante1 = null;
-		Participante participante2 = null;
+		Participante participante1;
+		Participante participante2;
 		for (int i = 0; i < this.camp.getParticipantes().size(); i++) {
 			for(int j = i + 1; j < this.camp.getParticipantes().size(); j++){
 				if(this.camp.getParticipantes().get(i).getPontuacao() < this.camp.getParticipantes().get(j).getPontuacao()){
 					participante1 = this.camp.getParticipantes().get(i);
 					participante2 = this.camp.getParticipantes().get(j);
-					this.camp.getParticipantes().set(i, participante1);
+					this.camp.getParticipantes().set(i, participante2);
 					this.camp.getParticipantes().set(j, participante1);
 				}
 			}
