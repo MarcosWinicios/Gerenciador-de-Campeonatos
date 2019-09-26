@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Campeonato {
 	private String nome;
 	private String jogo;
-	private ArrayList<Participante> participantes;
+	private ArrayList<Participante> participantes = new ArrayList<Participante>();
 	private Participante vencedor;
 	
 	public Campeonato() {
