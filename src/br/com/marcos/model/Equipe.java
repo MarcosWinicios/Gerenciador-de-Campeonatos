@@ -52,7 +52,7 @@ public class Equipe implements Participante{
 		return pontuacao;
 	}
 	@Override
-	public void setPontuacao(int pontos) {
+	public void setPontuacao(int pontoacao) {
 		this.pontuacao = pontos;
 	}
 

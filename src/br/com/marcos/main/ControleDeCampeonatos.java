@@ -4,6 +4,5 @@ import br.com.marcos.model.Sexo;
 
 public class ControleDeCampeonatos {
 	public static void main(String[] args) {
-		Sexo sex = Sexo.FEMININO;
 	}
 }
