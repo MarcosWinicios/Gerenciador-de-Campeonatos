@@ -45,9 +45,9 @@ public class Controller {
 			for(int i = 0; i < this.camp.getParticipantes().size(); i++) {
 				Equipe e = (Equipe)this.camp.getParticipantes().get(i);
 				if(e.getNome().equals(equipe.getNome())) {
-					for(int j = 0; i < equipe.getIntegrandes().size(); j++) {
-						if(equipe.getIntegrandes().get(j).getNick().equals(jogador.getNick())) {
-							equipe.getIntegrandes().remove(j);
+					for(int j = 0; i < equipe.getIntegrantes().size(); j++) {
+						if(equipe.getIntegrantes().get(j).getNick().equals(jogador.getNick())) {
+							equipe.getIntegrantes().remove(j);
 							this.camp.getParticipantes().remove(i);
 							this.camp.getParticipantes().add(equipe);
 						}
@@ -83,9 +83,9 @@ public class Controller {
 			for(int i = 0; i < this.camp.getParticipantes().size(); i++) {
 				Equipe e = (Equipe)this.camp.getParticipantes().get(i);
 				if(e.getNome().equals(equipe.getNome())) {
-					for(int j = 0; i < equipe.getIntegrandes().size(); j++) {
-						if(equipe.getIntegrandes().get(j).getNick().equals(jogador.getNick())) {
-							equipe.getIntegrandes().get(j).setPontuacao(jogador.getPontuacao());
+					for(int j = 0; j < e.getIntegrantes().size(); j++) {
+						if(e.getIntegrantes().get(j).getNick().equals(jogador.getNick())) {
+							e.getIntegrantes().get(j).setPontuacao(jogador.getPontuacao());
 						}
 					}
 				}
@@ -121,9 +121,9 @@ public class Controller {
 		else if(this.tipoEquipes){
 			for(int i = 0; i < this.camp.getParticipantes().size(); i++) {
 				Equipe equipe = (Equipe)this.camp.getParticipantes().get(i);
-				for(int j = 0; j < equipe.getIntegrandes().size(); j++) {
-					if(jogador.getPontuacao() < equipe.getIntegrandes().get(j).getPontuacao()) {
-						jogador = (Jogador)equipe.getIntegrandes().get(j);
+				for(int j = 0; j < equipe.getIntegrantes().size(); j++) {
+					if(jogador.getPontuacao() < equipe.getIntegrantes().get(j).getPontuacao()) {
+						jogador = (Jogador)equipe.getIntegrantes().get(j);
 					}
 				}
 			}
@@ -150,6 +150,22 @@ public class Controller {
 			}
 		}
 		return participante;
+	}
+	
+	public void inserirOrganizador(Organizador organizador) {
+		this.camp.addOrganizador(organizador);
+	}
+	
+	public void removerOrganizador(Organizador organizador) {
+		for(int i = 0; i < this.camp.getOrganizadores().size(); i++) {
+			if(organizador.getNome().equals(this.camp.getOrganizadores().get(i).getNome())) {
+				this.camp.getOrganizadores().remove(i);
+			}
+		}
+	}
+	
+	public ArrayList<Organizador> listarOrganizadores(){
+		return this.camp.getOrganizadores();
 	}
 	
 }
