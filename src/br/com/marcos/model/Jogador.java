@@ -13,16 +13,12 @@ public class Jogador extends Pessoa implements Participante{
 		this.pontuacao = pontuacao;
 		this.nick = nick;
 	}
-
-	@Override
-	public void calcularPontos() {
-		// TODO Auto-generated method stub
-	} 
 	
+	@Override
 	public int getPontuacao() {
 		return pontuacao;
 	}
-	
+	@Override
 	public void setPontuacao(int pontuacao) {
 		this.pontuacao = pontuacao;
 	}
