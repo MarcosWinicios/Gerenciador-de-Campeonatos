@@ -34,5 +34,7 @@ public class Teste111 {
 		for(Participante p : ctr.gerarRanking()) {
 			System.out.println(p.getPontuacao());
 		}
+		
+		System.out.println(ctr.melhorJogador().getNick());
 	}
 }
